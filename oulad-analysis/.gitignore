@@ -42,6 +42,9 @@ notebooks/04_scratch/*
 .vscode/
 *.swp
 
+# Raw data — only the zip and README are tracked, extracted CSVs are ignored
+data/raw/*.csv
+
 # Secrets / Config
 .env
 .env.local
