@@ -2,6 +2,31 @@
 
 This repository contains the data science pipeline and analysis for the Open University Learning Analytics Dataset (OULAD). It is structured to support a reproducible, bilingual (R and Python) workflow, drawing inspiration from established project structures like Cookiecutter Data Science.
 
+## Getting Started
+
+Follow these steps to get the repo up and running:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Hariswara/TPSM-POS-LEARN.git
+cd oulad-analysis
+
+# 2. Install Git LFS (required once per machine)
+git lfs install
+
+# 3. Extract the raw dataset from the zip
+unzip data/raw/OULAD.zip -d data/raw/
+
+# 4. Install Python dependencies
+pip install -r requirements.txt
+
+# 5. (Optional) Restore R environment
+# Open oulad-analysis.Rproj in RStudio, then run:
+# renv::restore()
+```
+
+> **Why unzip?** To save bandwidth and storage, only the compressed dataset (`OULAD.zip`, ~45 MB) is committed to Git via LFS. The extracted CSVs (~500 MB) are git-ignored and live only on your local machine.
+
 ## Repository Structure
 
 The project is organized into the following directories to separate concerns, ensure reproducibility, and keep the workflow organized for collaborators.
@@ -44,7 +69,7 @@ oulad-analysis/
 ## Directory Details
 
 ### `data/`
-- **`raw/`**: The ground truth dataset. This folder must contain the original provided CSVs. Treat these files as read-only.
+- **`raw/`**: Contains `OULAD.zip` (tracked via Git LFS) and the extracted CSVs (git-ignored). After cloning, run `unzip data/raw/OULAD.zip -d data/raw/` to extract. **Never modify these source files.**
 - **`processed/`**: Intermediate datasets that have been cleaned and prepared by the pipeline scripts.
 - **`features/`**: The final formulated tables that are fed directly into statistical analysis and machine learning models.
 
