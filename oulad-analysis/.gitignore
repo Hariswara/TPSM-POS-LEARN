@@ -1,0 +1,50 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# R and RStudio
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.Rprofile
+renv/library/
+renv/local/
+renv/staging/
+renv/python/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# Scratch notebooks (personal sandboxes, never reviewed)
+notebooks/04_scratch/*
+!notebooks/04_scratch/README.md
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+
+# Raw data — only the zip and README are tracked, extracted CSVs are ignored
+data/raw/*.csv
+
+# Secrets / Config
+.env
+.env.local
