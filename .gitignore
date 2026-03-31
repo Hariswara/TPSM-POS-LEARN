@@ -11,3 +11,5 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+.Rproj.user
+/oulad-analysis/outputs/data
