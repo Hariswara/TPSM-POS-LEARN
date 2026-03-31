@@ -40,7 +40,7 @@ student_assessment %>%
   count(score, sort = TRUE)
 
 #output -  ?       173
-#The unknown/missing scores are prefixes like ? 0.099%
+#The unknown/missing scores are prefixes like ? and it is 0.099%
 
 
 # SECTION 3: Investigate date column in assessments
@@ -80,7 +80,7 @@ student_info %>% count(final_result, sort = TRUE)
 # SECTION 5: Investigate imd_band — check all levels and NAs
 # since we Need exact strings to build the ordered factor correctly (as mentioned in previous script).
 
-cat("\n=== imd_band all levels ===\n")
+cat("\nimd_band all levels\n")
 
 student_info %>% count(imd_band, sort = FALSE)
 
@@ -144,15 +144,41 @@ vle %>%
 #output - ?        5243
 
 
-#SECTION 8: Inspect is_banked — confirm it's truly binary before converting to binary as mentioned in previous script
+#SECTION 8: 
+# part 1: Inspect is_banked — confirm it's truly binary before converting to binary as mentioned in previous script
 
-cat("\n=== is_banked unique values ===\n")
+cat("\n is_banked unique values\n")
 
 student_assessment %>% count(is_banked)
 
 # output -
 #   0  -  172003
 #   1  -  1909
+
+# part 2: inspect highest_education to identify unique values that need to make heirachies
+
+cat("\n highest_education unique values\n")
+
+student_info %>% count(highest_education)
+
+#output -
+# A Level or Equivalent       14045
+# HE Qualification             4730
+# Lower Than A Level          13158
+# No Formal quals               347
+# Post Graduate Qualification   313
+
+# part 2: inspect age_band to identify unique values that need to make hierarchies
+
+cat("\n age_band unique values\n")
+
+student_info %>% count(age_band)
+
+#output -
+# 0-35     22944
+# 35-55     9433
+# 55<=       216
+
 
 
 # SECTION 9: Check for duplicate student-module-presentation combination,
