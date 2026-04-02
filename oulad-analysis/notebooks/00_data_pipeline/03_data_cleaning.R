@@ -414,8 +414,8 @@ print(dim(analytical_df))
 # RDS: preserves factor levels and ordering exactly
 #      loading the CSV later would lose all encoding and we'd redo it
 
-write_csv(analytical_df, "outputs/data/analytical_dataset.csv")
-saveRDS(analytical_df,   "outputs/data/analytical_dataset.rds")
+write_csv(analytical_df, "data/processed/analytical_dataset.csv")
+saveRDS(analytical_df,   "data/processed/analytical_dataset.rds")
 
 
 
